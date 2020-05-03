@@ -19,7 +19,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install mpich
-    - name: testing
+    - name: scalar testing
       shell: bash -l {0}
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
@@ -30,4 +30,5 @@ jobs:
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
+        cd templates/01_embarssingly_parallel_loop
         mpiexec -n 1 -usize 3 pytest
