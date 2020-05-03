@@ -31,4 +31,5 @@ jobs:
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
         cd templates/01_embarssingly_parallel_loop
+        mpiexec -n 1 -usize 3 python run.py
         mpiexec -n 1 -usize 3 pytest
