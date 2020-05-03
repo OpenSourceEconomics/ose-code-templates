@@ -8,26 +8,26 @@ Notes
 
 These two books offer useful introductions to high-performance computing using Python.
 
-
+    * Gorelick, M., & Ozsvald, I. (2014). "High performance Python: Practical performant programming for humans". O’Reilly Media.
+    * Lanaro, G. (2017). "Python high performance: Build high-performing, concurrent, and distributed applications". Packt Publishing
 
 There is also a lot of supporting material available online.
 
-    https://rabernat.github.io/research_computing/parallel-programming-with-mpi-for-python.html
-
-    https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf
+    * `Parallel programming with MPI for Python <https://rabernat.github.io/research_computing/parallel-programming-with-mpi-for-python.html>`_
+    * `Parallel Computing in Python using mpi4py <https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf>`_
 
 Examples
 --------
 
-$ mpiexec -n 1 -usize 3 python run.py
+We provide two use cases below. In the first one the script is called using standard Python and
+thus only shared memory parallelism is possible. The second one initializes an MPI environment,
+which allows for distributed memory parallelism as well.
 
-$ python run.py
+    $ python run.py
+
+    $ mpiexec -n 1 -usize 3 python run.py
 
 """
-
-# add link to ose-resources
-
-
 from functools import partial
 
 import numpy as np

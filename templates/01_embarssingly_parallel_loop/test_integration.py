@@ -1,6 +1,13 @@
+"""Integration tests.
+
+This module contains the integration tests that all the individual units are combined and tested
+together.
+
+"""
 import os
 
 import numpy as np
+import pytest
 
 from core_functions import distribute_tasks
 
@@ -10,7 +17,12 @@ def example_func(x):
 
 
 def get_random_request():
+    """Random test case.
 
+    This function sets up a random test case that differs depending on whether MPI capabilities
+    are available or not.
+
+    """
     num_tasks = np.random.randint(5, 25)
     num_cores = np.random.randint(1, num_tasks)
 
@@ -26,5 +38,6 @@ def get_random_request():
     return tasks, num_cores, is_distributed
 
 
+@pytest.mark.repeat(10)
 def test_1():
     distribute_tasks(example_func, *get_random_request())
