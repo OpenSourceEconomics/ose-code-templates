@@ -20,14 +20,6 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install mpich
-    - name: scalar testing with coverage report
-      shell: bash -l {0}
-      run: |
-        export PATH="$PATH:/usr/share/miniconda/bin"
-        source .envrc
-        pytest --cov=./ --cov-report=xml
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
     - name: parallel testing
       shell: bash -l {0}
       run: |
@@ -35,4 +27,3 @@ jobs:
         source .envrc
         cd templates/01_embarssingly_parallel_loop
         mpiexec -n 1 -usize 3 python run.py
-        mpiexec -n 1 -usize 3 pytest
