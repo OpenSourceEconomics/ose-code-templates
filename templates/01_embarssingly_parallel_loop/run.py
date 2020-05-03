@@ -1,21 +1,36 @@
+"""Docstring for the example.py module.
+
+Modules names should have short, all-lowercase names.  The module name may
+have underscores if this improves readability.
+
+Every module should have a docstring at the very top of the file.  The
+module's docstring may extend over multiple lines.  If your docstring does
+extend over multiple lines, the closing three quotation marks must be on
+a line by itself, preferably preceded by a blank line.
+
+
+Notes
+-----
+
+There a lot of supporting material available online.
+
+    https://rabernat.github.io/research_computing/parallel-programming-with-mpi-for-python.html
+
+
+Examples
+-------
+
+$ mpiexec.mpich -n 1 -usize 3 python run.py
+
+$ python run.py
+
+"""
+
 import time
-import os
 
 from core_functions import distribute_tasks
 
-# TODO: As instructions
-
-# We want to ensure all automatic parallelism is turned off.
-update = {
-    "NUMBA_NUM_THREADS": "1",
-    "OMP_NUM_THREADS": "1",
-    "OPENBLAS_NUM_THREADS": "1",
-    "NUMEXPR_NUM_THREADS": "1",
-    "MKL_NUM_THREADS": "1",
-}
-os.environ.update(update)
-
-
+#
 def example_task(task, **kwargs):
 
     time.sleep(3)
@@ -27,13 +42,8 @@ def example_task(task, **kwargs):
 
 if __name__ == "__main__":
 
-    tasks = range(32)
+    tasks = range(5)
 
-    rslt = distribute_tasks(example_task, tasks, num_cores=10, distributed=True)
+    rslt = distribute_tasks(example_task, tasks, num_cores=3, distributed=True)
 
     # clickup
-
-    # distributed/shared as options, have a function run_tasks, that than either runs
-
-    # RUN CHECKS FOR DISTRIBUTED AT PARSE OF CLI
-    # TODO: There was an issue with tasks smaller than resources, check!
