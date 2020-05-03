@@ -7,7 +7,7 @@ import multiprocessing as mp
 # run script without a problem using mpiexec or just standard python
 # add link to ose-resources
 
-#if 'PMI_SIZE' in os.environ.keys():
+# if 'PMI_SIZE' in os.environ.keys():
 #    try:
 #    except ImportError:
 #        pass
@@ -20,7 +20,14 @@ def distribute_tasks(func_task, tasks, num_cores=1, distributed=False):
     # TODO: How assign resources to Pool?
     # Set up executor for tasks
     if distributed:
+
         from mpi4py.futures import MPIPoolExecutor
+
+        # TODO: what happens if list
+        num_tasks = tasks.shape[0]
+        if num_tasks < num_cores:
+            raise AssertionError
+
         executor = MPIPoolExecutor(num_cores)
     else:
         executor = mp.Pool(num_cores)
@@ -29,13 +36,3 @@ def distribute_tasks(func_task, tasks, num_cores=1, distributed=False):
         rslt = list(e.map(func_task, tasks))
 
     return rslt
-
-
-
-
-
-
-
-
-
-
