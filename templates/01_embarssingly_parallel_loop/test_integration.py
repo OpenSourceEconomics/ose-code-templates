@@ -20,7 +20,7 @@ def get_random_request():
     num_cores = np.random.randint(1, num_tasks)
 
     # TODO: reference to hack stackoverflow
-    if 'PMI_SIZE' in os.environ.keys():
+    if "PMI_SIZE" in os.environ.keys():
         is_distributed = np.random.choice([True, False])
     else:
         is_distributed = False

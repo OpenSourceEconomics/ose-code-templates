@@ -15,11 +15,13 @@ update = {
 }
 os.environ.update(update)
 
+
 def example_task(task, **kwargs):
 
     time.sleep(3)
 
     return task
+
 
 # black codecov
 
@@ -29,8 +31,7 @@ if __name__ == "__main__":
 
     rslt = distribute_tasks(example_task, tasks, num_cores=10, distributed=True)
 
-
-    #clickup
+    # clickup
 
     # distributed/shared as options, have a function run_tasks, that than either runs
 
