@@ -1,0 +1,14 @@
+name: ose-code-templates
+
+channels:
+  - defaults
+  - opensourceeconomics
+  - conda-forge
+
+dependencies:
+  - python=3.7
+  - pip
+  - numpy
+  - mpi4py
+  - pytest
+
