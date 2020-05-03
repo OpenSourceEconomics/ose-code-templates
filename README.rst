@@ -17,6 +17,8 @@ OSE code templates
 .. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
     :target: https://OpenSourceEconomics.zulipchat.com
 
+|
+
 We maintain a set of code templates on selected issues. They help in the onboarding of new
 contributors and also serve as a teaching resource. If you have any questions or suggestions,
 please do not hesitate to contact us on `Zulip <https://OpenSourceEconomics.zulipchat.com>`_
