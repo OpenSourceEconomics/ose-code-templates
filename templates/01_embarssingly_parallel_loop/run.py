@@ -12,9 +12,8 @@ These two books offer useful introductions to high-performance computing using P
 
 There is also a lot of supporting material available online.
 
-    https://rabernat.github.io/research_computing/parallel-programming-with-mpi-for-python.html
-
-    https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf
+    * `Parallel programming with MPI for Python <https://rabernat.github.io/research_computing/parallel-programming-with-mpi-for-python.html>`_
+    * `Parallel Computing in Python using mpi4py <https://research.computing.yale.edu/sites/default/files/files/mpi4py.pdf>`_
 
 Examples
 --------
@@ -24,10 +23,6 @@ $ mpiexec -n 1 -usize 3 python run.py
 $ python run.py
 
 """
-
-# add link to ose-resources
-
-
 from functools import partial
 
 import numpy as np
@@ -58,3 +53,7 @@ if __name__ == "__main__":
     # evaluation of our test function.
     num_proc, is_distributed = 3, True
     distribute_tasks(p_example_task, eval_points, num_proc, is_distributed)
+
+    import os
+    print(os.environ.keys())
+    raise AssertionError

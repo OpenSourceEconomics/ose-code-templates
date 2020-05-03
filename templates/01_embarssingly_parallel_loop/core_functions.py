@@ -1,3 +1,9 @@
+"""Core functions for template
+
+Examples
+--------
+$ test
+"""
 import multiprocessing as mp
 import os
 
