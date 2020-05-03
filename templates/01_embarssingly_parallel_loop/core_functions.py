@@ -1,16 +1,29 @@
 """Core functions for template
-
-Examples
---------
-$ test
 """
 import multiprocessing as mp
 import os
 
 
 def distribute_tasks(func_task, tasks, num_proc=1, is_distributed=False):
+    """Distribute workload.
 
-    # We might be able to save some resources.
+    This function distributes the workload using the ``multiprocessing`` or ``mpi4py`` library.
+    It simply creates a pool of processes that allow to work on the tasks using shared or
+    distributed memory.
+
+    Notes
+    -----
+
+    We need to ensure that the number of processes is never larger as the number of tasks as
+    otherwise the MPI implementation does not terminate properly.
+
+    References
+    ----------
+
+    * MP Pool, see `here <https://docs.python.org/3/library/multiprocessing.html#multiprocessing.pool.Pool>`_ for details
+    * MPI Pool, see `here <https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpipoolexecutor>`_ for details
+
+    """
     num_proc_intern = min(len(tasks), num_proc)
 
     if is_distributed:

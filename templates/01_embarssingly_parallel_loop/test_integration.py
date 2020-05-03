@@ -1,3 +1,5 @@
+"""Integration tests.
+"""
 import os
 
 import numpy as np
@@ -10,7 +12,6 @@ def example_func(x):
     return x
 
 
-@pytest.mark.repeat(10)
 def get_random_request():
 
     num_tasks = np.random.randint(5, 25)
@@ -28,5 +29,6 @@ def get_random_request():
     return tasks, num_cores, is_distributed
 
 
+@pytest.mark.repeat(10)
 def test_1():
     distribute_tasks(example_func, *get_random_request())

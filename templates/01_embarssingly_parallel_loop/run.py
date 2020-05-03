@@ -54,7 +54,3 @@ if __name__ == "__main__":
     # evaluation of our test function.
     num_proc, is_distributed = 3, True
     distribute_tasks(p_example_task, eval_points, num_proc, is_distributed)
-
-    import os
-    print(os.environ.keys())
-    raise AssertionError
