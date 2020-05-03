@@ -9,7 +9,7 @@ Notes
 These two books offer useful introductions to high-performance computing using Python.
 
     * Gorelick, M., & Ozsvald, I. (2014). "High performance Python: Practical performant programming for humans". O’Reilly Media.
-    * Lanaro, G. (2017). "Python High Performance: Build high-performing, concurrent, and distributed applications". Packt Publishing
+    * Lanaro, G. (2017). "Python high performance: Build high-performing, concurrent, and distributed applications". Packt Publishing
 
 There is also a lot of supporting material available online.
 

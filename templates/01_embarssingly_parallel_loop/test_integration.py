@@ -1,4 +1,8 @@
 """Integration tests.
+
+This module contains the integration tests that all the individual units are combined and tested
+together.
+
 """
 import os
 
@@ -13,7 +17,12 @@ def example_func(x):
 
 
 def get_random_request():
+    """Random test case.
 
+    This function sets up a random test case that differs depending on whether MPI capabilities
+    are available or not.
+
+    """
     num_tasks = np.random.randint(5, 25)
     num_cores = np.random.randint(1, num_tasks)
 
