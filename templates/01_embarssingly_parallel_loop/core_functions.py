@@ -17,9 +17,6 @@ def distribute_tasks(func_task, tasks, num_proc=1, is_distributed=False):
     We need to ensure that the number of processes is never larger as the number of tasks as
     otherwise the MPI implementation does not terminate properly.
 
-    References
-    ----------
-
     * MP Pool, see `here <https://docs.python.org/3/library/multiprocessing.html#multiprocessing.pool.Pool>`_ for details
     * MPI Pool, see `here <https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpipoolexecutor>`_ for details
 

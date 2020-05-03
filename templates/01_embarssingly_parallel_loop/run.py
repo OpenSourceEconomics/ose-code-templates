@@ -19,9 +19,13 @@ There is also a lot of supporting material available online.
 Examples
 --------
 
-$ mpiexec -n 1 -usize 3 python run.py
+We provide two use cases below. In the first one the script is called using standard Python and
+thus only shared memory parallelism is possible. The second one initializes an MPI environment,
+which allows for distributed memory parallelism as well.
 
-$ python run.py
+    $ python run.py
+
+    $ mpiexec -n 1 -usize 3 python run.py
 
 """
 from functools import partial
@@ -39,6 +43,10 @@ def example_task(alpha, beta, gamma, x):
 
 
 if __name__ == "__main__":
+
+    import os
+
+    print(os.environ.keys())
 
     # We fix the details of our evaluation task and draw a sample of evaluation points.
     num_points, num_inputs = 300, 3
