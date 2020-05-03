@@ -44,10 +44,6 @@ def example_task(alpha, beta, gamma, x):
 
 if __name__ == "__main__":
 
-    import os
-
-    print(os.environ.keys())
-
     # We fix the details of our evaluation task and draw a sample of evaluation points.
     num_points, num_inputs = 300, 3
 
