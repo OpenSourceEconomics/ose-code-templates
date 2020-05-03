@@ -10,9 +10,8 @@ dependencies:
   - pip
   - numpy
   - mpi4py
+  - black
   - pytest
   - pytest-cov
-  - pip:
-    - black
-    - pytest-black
+  - pytest-black
 
