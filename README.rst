@@ -14,15 +14,15 @@ OSE code templates
 .. image:: https://codecov.io/gh/OpenSourceEconomics/ose-code-templates/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/OpenSourceEconomics/ose-code-templates
 
-Introduction
-============
 
-We maintain a set of code templates on selected issues. They help in the onboarding of new contributors and server as teaching resources.
+We maintain a set of code templates on selected issues. They help in the onboarding of new contributors and also serve as a teaching resource.
 
 Material
 ========
 
-Embarrassingly parallel for loops
----------------------------------
+We have just started with the templates, so our current offer is rather limited.
+
+`Parallelize an embarrassingly parallel loop <https://github.com/OpenSourceEconomics/ose-code-templates/tree/master/templates/01_embarssingly_parallel_loop>`_
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 We show how to parallelize a loop using the `multiprocessing` and `mpi4py`. The setup allows to seamlessly switch between shared and distributed memory computing.
