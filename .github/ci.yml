@@ -1,0 +1,33 @@
+name: CI
+
+on: [push]
+
+jobs:
+  run-tests:
+
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: goanpeca/setup-miniconda@v1.0.2
+      with:
+        acitvate-environment: ose-code-templates
+        environment-file: environment.yml
+        python-version: 3.7
+        auto-activate-base: false
+    - name: install mpich dependency
+      run: |
+        sudo apt-get update
+        sudo apt-get install mpich
+    - name: testing
+      shell: bash -l {0}
+      run: |
+        export PATH="$PATH:/usr/share/miniconda/bin"
+        source .envrc
+        pytest
+    - name: parallel testing
+      shell: bash -l {0}
+      run: |
+        export PATH="$PATH:/usr/share/miniconda/bin"
+        source .envrc
+        mpiexec -n 1 -usize 3 pytest
