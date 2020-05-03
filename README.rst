@@ -17,8 +17,7 @@ We maintain a set of code templates on selected issues. They help in the onboard
 Material
 ========
 
-.. _Embarrassingly parallel for loops: https://github.com/OpenSourceEconomics/ose-code-templates/tree/master/templates/01_embarssingly_parallel_loop
-
+Embarrassingly parallel for loops
 ---------------------------------
 
 We show how to parallelize a loop using the `multiprocessing` and `mpi4py`. The setup allows to seamlessly switch between shared and distributed memory computing.
