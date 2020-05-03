@@ -14,4 +14,6 @@ dependencies:
   - pytest
   - pytest-cov
   - pytest-black
+  - pytest-repeat
+
 

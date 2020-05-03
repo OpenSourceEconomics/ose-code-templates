@@ -1,6 +1,7 @@
 import os
 
 import numpy as np
+import pytest
 
 from core_functions import distribute_tasks
 
@@ -9,6 +10,7 @@ def example_func(x):
     return x
 
 
+@pytest.mark.repeat(10)
 def get_random_request():
 
     num_tasks = np.random.randint(5, 25)
