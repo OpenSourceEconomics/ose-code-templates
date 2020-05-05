@@ -15,11 +15,6 @@ jobs:
         acitvate-environment: ose-code-templates
         environment-file: environment.yml
         python-version: 3.7
-        auto-activate-base: false
-    - name: install mpich dependency
-      run: |
-        sudo apt-get update
-        sudo apt-get install mpich
     - name: scalar testing with coverage report
       shell: bash -l {0}
       run: |
