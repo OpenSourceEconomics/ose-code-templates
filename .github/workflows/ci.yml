@@ -28,6 +28,11 @@ jobs:
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
+
+        # TODO: Calling pytest from the project root directory requires to manually set the current
+        # working directory in the MPI process. This results in too much overhead at this point to
+        # be worth the flexiblity.
         cd templates/01_embarssingly_parallel_loop
+        mpiexec -n 1 -usize 3 pytest --with-mpi
+
         mpiexec -n 1 -usize 3 python run.py
-        mpiexec -n 1 -usize 3 pytest
