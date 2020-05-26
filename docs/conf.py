@@ -16,6 +16,8 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 
 
+sys.path.insert(0, "../templates/01_embarssingly_parallel_loop")
+
 # -- Project information -----------------------------------------------------
 
 project = "ose-code-templates"
