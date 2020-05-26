@@ -39,3 +39,7 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         file: templates/01_embarssingly_parallel_loop/coverage.xml
+    - name: Build documentation
+    - uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "docs/"
