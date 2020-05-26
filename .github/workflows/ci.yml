@@ -12,7 +12,7 @@ jobs:
     - uses: codecov/codecov-action@v1
     - uses: goanpeca/setup-miniconda@v1.0.2
       with:
-        acitvate-environment: ose-code-templates
+        activate-environment: ose-code-templates
         environment-file: environment.yml
         python-version: 3.7
     - name: scalar testing with coverage report
