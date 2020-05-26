@@ -1,0 +1,9 @@
+numpy
+mpi4py
+black
+pytest
+pytest-cov
+pytest-black
+pytest-repeat
+pytest-mpi
+templates.01_embarssingly_parallel_loop.core_functions
