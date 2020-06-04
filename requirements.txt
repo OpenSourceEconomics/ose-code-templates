@@ -1,9 +1,3 @@
 sphinx-rtd-theme
 numpy
-mpi4py
-black
-pytest
-pytest-cov
-pytest-black
-pytest-repeat
-pytest-mpi
+
