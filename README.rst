@@ -17,8 +17,9 @@ OSE code templates
 .. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
     :target: https://OpenSourceEconomics.zulipchat.com
  
-.. image:: https://ose-code-templates.readthedocs.io/en/latest/?badge=latest
-    :target: https://readthedocs.org/projects/ose-code-templates/badge/?version=latest
+.. image:: https://readthedocs.org/projects/ose-code-templates/badge/?version=latest
+    :target: https://ose-code-templates.readthedocs.io/en/latest/?badge=latest
+
 
 |
 
