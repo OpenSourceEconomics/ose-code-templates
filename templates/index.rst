@@ -7,7 +7,8 @@ Welcome to ose-code-templates's documentation!
 ==============================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   templates
- 
+   01_embarssingly_parallel_loop/index
+   02_numba_parallel/02_numba_parallel.ipynb
+

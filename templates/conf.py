@@ -16,7 +16,8 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 
 
-sys.path.insert(0, "../templates/01_embarssingly_parallel_loop")
+sys.path.insert(0, "01_embarssingly_parallel_loop")
+
 
 # -- Project information -----------------------------------------------------
 
@@ -24,17 +25,20 @@ project = "ose-code-templates"
 copyright = "2020, OpenSourceEconomics"
 author = "OpenSourceEconomics"
 
-# The full version, including alpha/beta/rc tags
-release = "0.1"
-
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.coverage", "sphinx.ext.napoleon"]
-master_doc = "index"
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.mathjax",
+    "nbsphinx",
+    "sphinx.ext.coverage",
+    "sphinx_rtd_theme",
+    "sphinx.ext.napoleon",
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
