@@ -38,9 +38,8 @@ We have just started with the templates, so our current offer is rather limited.
 We show how to parallelize a loop using the ``multiprocessing`` and ``mpi4py``. The setup allows to
 seamlessly switch between shared and distributed memory computing.
 
-`Parallelization with numba <https://github
-.com/OpenSourceEconomics/ose-code-templates/blob/master/templates/02_numba_parallel/02_numba_parallel.ipynb>`_
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`Parallelization with numba <https://github.com/OpenSourceEconomics/ose-code-templates/blob/master/templates/02_numba_parallel/02_numba_parallel.ipynb>`_
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-We collect resources and demonstrate parrelization with numba. Our focus lies on the
+We collect resources and demonstrate parallelization with numba. Our focus lies on the
 analysis of nested parallelism. The working example is inspired by `respy`.
