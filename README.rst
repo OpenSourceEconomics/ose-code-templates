@@ -42,4 +42,5 @@ seamlessly switch between shared and distributed memory computing.
 .com/OpenSourceEconomics/ose-code-templates/blob/master/templates/02_numba_parallel/02_numba_parallel.ipynb>`_
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-We collect resources and demonstrate parrelization with numba. Our focus lies
+We collect resources and demonstrate parrelization with numba. Our focus lies on the
+analysis of nested parallelism. The working example is inspired by `respy`.
