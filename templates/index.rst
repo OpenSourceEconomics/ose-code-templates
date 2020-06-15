@@ -3,12 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ose-code-templates's documentation!
-==============================================
+ose-code-templates
+===================
 
 .. toctree::
    :maxdepth: 2
 
    01_embarssingly_parallel_loop/index
+
+We show how to parallelize a loop using the ``multiprocessing`` and ``mpi4py``. The setup allows to
+seamlessly switch between shared and distributed memory computing.
+
+.. toctree::
+   :maxdepth: 2
+ 
    02_numba_parallel/02_numba_parallel.ipynb
+
+We collect resources and demonstrate parallelization with numba. Our focus lies on the
+analysis of nested parallelism. The working example is inspired by `respy`.
+
 
