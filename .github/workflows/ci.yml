@@ -52,11 +52,8 @@ jobs:
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
-        import subprocess as sp
-        notebook = "templates/02_numba_parallel/02_numba_parallel.ipynb"
-        cmd = " jupyter nbconvert --execute {}  --ExecutePreprocessor.timeout=-1".format(
-                notebook
-            )
-        sp.check_call(cmd, shell=True)
+        cd templates/02_numba_parallel/
+        jupyter nbconvert --execute 02_numba_parallel.ipynb  --ExecutePreprocessor.timeout=-1
+
 
 
