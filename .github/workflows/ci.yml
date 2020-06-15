@@ -44,7 +44,7 @@ jobs:
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
-        cd docs/
+        cd templates/
         make html
 
     - name: run 02 notebook
