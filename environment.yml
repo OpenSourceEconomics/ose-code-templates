@@ -10,6 +10,9 @@ dependencies:
   - sphinx>=1.4
   - pip
   - numpy
+  - numba
+  - jupyterlab
+  - jupyter_contrib_nbextensions
   - mpi4py
   - black
   - pytest

@@ -46,3 +46,14 @@ jobs:
         source .envrc
         cd docs/
         make html
+
+    - name: run 02 notebook
+      shell: bash -l {0}
+      run: |
+        export PATH="$PATH:/usr/share/miniconda/bin"
+        source .envrc
+        cd templates/02_numba_parallel/
+        jupyter nbconvert --execute 02_numba_parallel.ipynb  --ExecutePreprocessor.timeout=-1
+
+
+
