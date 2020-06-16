@@ -23,4 +23,4 @@ OSE code templates
 
 |
 
-We maintain a set of code templates on selected issues. They help in the onboarding of new contributors and also serve as a teaching resource. Check out the `documentation  <https://ose-code-templates.readthedocs.io/en/latest/?badge=latest>`_ If you have any questions or suggestions, please do not hesitate to contact us on `Zulip <https://ose.zulipchat.com>`_.
+We maintain a set of code templates on selected issues. They help in the onboarding of new contributors and also serve as a teaching resource. Check out our `documentation  <https://ose-code-templates.readthedocs.io/en/latest/?badge=latest>`_ for details. 
