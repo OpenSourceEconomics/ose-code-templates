@@ -19,7 +19,7 @@ def distribute_tasks(func_task, tasks, num_proc=1, is_distributed=False):
     otherwise the MPI implementation does not terminate properly.
 
     * MP Pool, see `here <https://docs.python.org/3/library/multiprocessing.html#multiprocessing.pool.Pool>`_ for details
-    * MPI Pool, see `here <https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpipoolexecutor>`_ for details
+    * MPI Pool, see `here <https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html#mpipoolexecutor>`__ for details
 
     """
     num_proc_intern = min(len(tasks), num_proc)
