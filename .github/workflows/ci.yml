@@ -39,11 +39,16 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         file: templates/01_embarssingly_parallel_loop/coverage.xml
-    - name: Build documentation
+
+    - name: Build documentation and check notebook formatting.
       shell: bash -l {0}
       run: |
         export PATH="$PATH:/usr/share/miniconda/bin"
         source .envrc
+
+        flake8-nb; [ $? -eq 0 ] || exit 1
+        black-nb --check .; [ $? -eq 0 ] || exit 1
+
         cd templates/
         make html
 
