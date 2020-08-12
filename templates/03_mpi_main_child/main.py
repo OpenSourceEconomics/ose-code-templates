@@ -51,6 +51,8 @@ for sample in samples:
 
     comm.Send([cmd['execute'], MPI.INT], dest=rank_sender)
 
+    comm.Send([sample, MPI.DOUBLE], dest=status.Get_source())
+
     #comm.Send([cmd['execute'], MPI.INT], dest=rank_sender)
 
 # We are done and now terminate all child processes properly and finally the turn off the

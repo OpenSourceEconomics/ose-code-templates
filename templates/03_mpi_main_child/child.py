@@ -27,6 +27,12 @@ while True:
     cmd = np.array(0, dtype="int64")
     comm.Recv([cmd, MPI.INT], source=0)
 
+    x_free_econ_eval = np.tile(np.nan, 2)
+    sendbuf = np.tile(np.nan, (num_slaves, 2))
+    comm.Recv(sendbuf, x_free_econ_eval, source=0)
+
+    print(x_free_econ_eval)
+
     if cmd == 0:
         print("done")
         comm.Disconnect()
