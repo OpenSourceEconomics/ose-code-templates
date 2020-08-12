@@ -1,6 +1,11 @@
-import glob
+from enum import IntEnum
 import shutil
+import glob
+
 import pandas as pd
+
+
+Tags = IntEnum('Tags', 'READY START DONE EXIT')
 
 
 def aggregate_results():

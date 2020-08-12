@@ -19,6 +19,8 @@ import pandas as pd
 import numpy as np
 import respy as rp
 
+from auxiliary import Tags
+
 comm = MPI.Comm.Get_parent()
 num_slaves, rank = comm.Get_size(), comm.Get_rank()
 
@@ -37,7 +39,7 @@ rslt = list()
 while True:
 
     # Signal readiness
-    comm.Send([np.zeros(1, dtype="int64"), MPI.DOUBLE], dest=0)
+    comm.send(None, tag=Tags.READY, dest=0)
 
     # Receive instructions and act accordingly.
     cmd = np.array(0, dtype="int64")
@@ -50,7 +52,7 @@ while True:
         df.to_pickle(f"rslt_child_{rank}.pkl")
 
         # Now we are ready to acknowledge completion and disconnect.
-        comm.Send([np.zeros(1, dtype="int64"), MPI.DOUBLE], dest=0)
+        comm.send(None, dest=0)
         comm.Disconnect()
         break
 

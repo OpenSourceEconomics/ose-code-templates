@@ -11,6 +11,7 @@ import chaospy as cp
 import numpy as np
 
 from auxiliary import aggregate_results
+from auxiliary import Tags
 
 
 if __name__ == "__main__":
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     status = MPI.Status()
     for sample in samples:
 
-        comm.Recv([cmd["receive"], MPI.DOUBLE], status=status)
+        comm.recv(None, status=status)
         rank_sender = status.Get_source()
 
         comm.Send([cmd["execute"], MPI.INT], dest=rank_sender)
@@ -58,10 +59,7 @@ if __name__ == "__main__":
     # communicator. We need for all to acknowledge the receipt to make sure we do not continue here
     # before all tasks are not only started but actually finished.
     [comm.Send([cmd["terminate"], MPI.INT], dest=rank) for rank in range(num_children)]
-    [
-        comm.Recv([cmd["receive"], MPI.DOUBLE], status=status)
-        for rank in range(num_children)
-    ]
+    [comm.recv(None) for rank in range(num_children)]
     comm.Disconnect()
 
     rslt = aggregate_results()
