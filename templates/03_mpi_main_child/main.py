@@ -11,7 +11,7 @@ import chaospy as cp
 import numpy as np
 
 from auxiliary import aggregate_results
-from auxiliary import Tags
+from auxiliary import TAGS
 
 
 if __name__ == "__main__":
@@ -39,18 +39,13 @@ if __name__ == "__main__":
     prob_info["num_params"] = samples.shape[1]
     comm.bcast(prob_info, root=MPI.ROOT)
 
-    cmd = dict()
-    cmd["terminate"] = np.array(0, dtype="int64")
-    cmd["execute"] = np.array(1, dtype="int64")
-    cmd["receive"] = np.array(-1, dtype="int64")
-
     status = MPI.Status()
     for sample in samples:
 
-        comm.recv(None, status=status)
+        comm.recv(status=status)
         rank_sender = status.Get_source()
 
-        comm.Send([cmd["execute"], MPI.INT], dest=rank_sender)
+        comm.send(None, tag=TAGS.RUN, dest=rank_sender)
 
         sample = np.array(sample, dtype="float64")
         comm.Send([sample, MPI.DOUBLE], dest=rank_sender)
@@ -58,10 +53,8 @@ if __name__ == "__main__":
     # We are done and now terminate all child processes properly and finally the turn off the
     # communicator. We need for all to acknowledge the receipt to make sure we do not continue here
     # before all tasks are not only started but actually finished.
-    [comm.Send([cmd["terminate"], MPI.INT], dest=rank) for rank in range(num_children)]
-    [comm.recv(None) for rank in range(num_children)]
+    [comm.send(None, tag=TAGS.EXIT, dest=rank) for rank in range(num_children)]
+    [comm.recv() for rank in range(num_children)]
     comm.Disconnect()
 
     rslt = aggregate_results()
-
-    print(rslt)

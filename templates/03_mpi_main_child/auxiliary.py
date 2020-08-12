@@ -5,7 +5,7 @@ import glob
 import pandas as pd
 
 
-Tags = IntEnum('Tags', 'READY START DONE EXIT')
+TAGS = IntEnum("TAGS", "RUN EXIT")
 
 
 def aggregate_results():

@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 
 sys.path.insert(0, "01_embarssingly_parallel_loop")
+sys.path.insert(0, "03_mpi_main_child")
 
 
 # -- Project information -----------------------------------------------------
@@ -24,7 +25,6 @@ sys.path.insert(0, "01_embarssingly_parallel_loop")
 project = "ose-code-templates"
 copyright = "2020, OpenSourceEconomics"
 author = "OpenSourceEconomics"
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -38,6 +38,7 @@ extensions = [
     "sphinx.ext.coverage",
     "sphinx_rtd_theme",
     "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -52,6 +53,10 @@ autodoc_mock_imports = [
     "mpi4py",
     "black ",
     "numpy",
+    "chaospy",
+    "respy",
+    "pandas",
+    "scipy",
     "pytest",
     "pytest-cov",
     "pytest-black",
