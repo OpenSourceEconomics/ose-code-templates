@@ -5,15 +5,19 @@ import os
 
 # In this script we only have explicit use of MPI as our level of parallelism. This needs to be
 # done right at the beginning of the script.
-update = {'NUMBA_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1', 'OPENBLAS_NUM_THREADS': '1',
-          'NUMEXPR_NUM_THREADS': '1', 'MKL_NUM_THREADS': '1'}
+update = {
+    "NUMBA_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+}
 os.environ.update(update)
 
+from mpi4py import MPI
 import pandas as pd
 import numpy as np
 import respy as rp
-
-from mpi4py import MPI
 
 comm = MPI.Comm.Get_parent()
 num_slaves, rank = comm.Get_size(), comm.Get_rank()
@@ -57,7 +61,10 @@ while True:
         comm.Recv([sample, MPI.DOUBLE], source=0)
 
         # params.loc["delta", "value"], params.loc[("wage_a", "exp_edu"), "value"] = sample
-        params.loc["delta", "value"], params.loc[("wage_fishing", "exp_fishing"), "value"] = sample
+        (
+            params.loc["delta", "value"],
+            params.loc[("wage_fishing", "exp_fishing"), "value"],
+        ) = sample
         stat = simulate(params).groupby("Identifier")["Experience_Fishing"].max().mean()
         rslt.append([stat, *sample])
 

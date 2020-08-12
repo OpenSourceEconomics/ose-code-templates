@@ -74,7 +74,7 @@ def test_3():
 
     This test evaluates the same request using the ``multiprocessing`` and ``mpi4py`` library and
     ensures that both yield the same result.
-    
+
     """
     tasks, num_proc, _ = get_random_request()
 
