@@ -70,12 +70,7 @@ if __name__ == "__main__":
                 params.loc[("wage_a", "exp_edu"), "value"],
             ) = sample
 
-            stat = (
-                simulate(params)
-                .groupby("Identifier")["Experience_Edu"]
-                .max()
-                .mean()
-            )
+            stat = simulate(params).groupby("Identifier")["Experience_Edu"].max().mean()
             rslt.append([stat, *sample])
 
         else:
