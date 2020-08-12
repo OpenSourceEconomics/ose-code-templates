@@ -20,7 +20,14 @@ dependencies:
   - pytest-black
   - pytest-repeat
   - pytest-mpi
+  - pandas
+  - fastparquet
+  - python-snappy
+  - cloudpickle
+  - chaospy
+  - estimagic
   - pip:
+    - git+https://github.com/OpenSourceEconomics/respy.git
     - sphinx_rtd_theme
     - nbsphinx
     - sphinxcontrib-bibtex
