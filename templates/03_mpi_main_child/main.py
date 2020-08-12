@@ -39,11 +39,11 @@ comm.bcast(prob_info, root=MPI.ROOT)
 cmd = dict()
 cmd['terminate'] = np.array(0, dtype='int64')
 cmd['execute'] = np.array(1, dtype='int64')
-check_in = np.zeros(1, dtype='int64')
+cmd['receive'] = np.array(1, dtype='int64')
 
 for sample in samples:
 
-    comm.Recv([check_in, MPI.DOUBLE], status=status)
+    comm.Recv([cmd['receive'], MPI.DOUBLE], status=status)
     rank_sender = status.Get_source()
 
     comm.Send([cmd['execute'], MPI.INT], dest=rank_sender)
@@ -55,7 +55,7 @@ for sample in samples:
 # communicator. We need for all to acknowledge the receipt to make sure we do not continue here
 # before all tasks are not only started but actually finished.
 [comm.Send([cmd['terminate'], MPI.INT], dest=rank) for rank in range(num_child)]
-[comm.Recv([check_in, MPI.DOUBLE], status=status) for rank in range(num_child)]
+[comm.Recv([cmd['receive'], MPI.DOUBLE], status=status) for rank in range(num_child)]
 comm.Disconnect()
 
 # We aggregate all dataframes into a single file.
