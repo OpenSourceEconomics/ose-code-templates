@@ -17,7 +17,6 @@ dependencies:
   - black
   - pytest
   - pytest-cov
-  - pytest-black
   - pytest-repeat
   - pytest-mpi
   - pandas
@@ -26,10 +25,12 @@ dependencies:
   - cloudpickle
   - chaospy
   - estimagic
+  - pytest-flake8
   - pip:
     - git+https://github.com/OpenSourceEconomics/respy.git
     - sphinx_rtd_theme
     - nbsphinx
+    - pytest-black
     - sphinxcontrib-bibtex
 
 
