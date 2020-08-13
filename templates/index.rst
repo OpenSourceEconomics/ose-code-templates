@@ -3,8 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-ose-code-templates
-===================
+.. |logo| image:: https://raw.githubusercontent.com/OpenSourceEconomics/ose-corporate-design/master/logos/OSE_logo_no_type_RGB.svg
+  :width: 4 %
+
+|logo| OSE code templates
+==========================
+
+
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+    :target: https://opensource.org/licenses/MIT
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+
+.. image:: https://github.com/openSourceEconomics/ose-code-templates/workflows/CI/badge.svg
+    :target: https://github.com/OpenSourceEconomics/ose-code-templates/actions?query=workflow%3ACI
+
+.. image:: https://codecov.io/gh/OpenSourceEconomics/ose-code-templates/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/OpenSourceEconomics/ose-code-templates
+
+.. image:: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+    :target: https://OpenSourceEconomics.zulipchat.com
+
+.. image:: https://readthedocs.org/projects/ose-code-templates/badge/?version=latest
+    :target: https://ose-code-templates.readthedocs.io/en/latest/?badge=latest
 
 .. toctree::
    :maxdepth: 1
@@ -29,3 +51,12 @@ analysis of nested parallelism and the working example is inspired by ``respy``.
 
 We show how to set up a main-child application. We use the example of uncertainty propagation
 using ``respy`` as the motivating use-case.
+
+==========
+Powered by
+==========
+
+.. image:: https://raw.githubusercontent.com/OpenSourceEconomics/ose-corporate-design/master/logos/OSE_logo_RGB.svg
+  :width: 22 %
+  :target: https://open-econ.org
+
